@@ -42,7 +42,6 @@ class CategoryItem extends StatelessWidget {
            main ? title: image,
           SizedBox(height: 5,),
            main ? image: title,
-
         ],
       ),
     );

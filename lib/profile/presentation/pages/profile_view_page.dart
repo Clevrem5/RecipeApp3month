@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:recipe2/categoryPage/presentation/widgets/category_page_nav.dart';
 import 'package:recipe2/core/Sizes.dart';
 import 'package:recipe2/core/colors/colors.dart';
-import 'package:recipe2/profile/presentation/pages/profile_body.dart';
-import 'package:recipe2/profile/presentation/pages/profile_page_app_bar.dart';
+import 'package:recipe2/profile/presentation/widgets/body/profile_body.dart';
+import 'package:recipe2/profile/presentation/widgets/appbar/profile_page_app_bar.dart';
 import 'package:recipe2/profile/presentation/pages/profile_viewmodel.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -31,7 +31,7 @@ class ProfilePage extends StatelessWidget {
               backgroundColor: RecipeColors.backRoundColor,
               extendBody: true,
               appBar: ProfilePageAppBar(vm: vm),
-              body: TabBarView(
+              body: TabBarView(physics: NeverScrollableScrollPhysics(),
                 children: [
                   ProfileBody(vm: vm),
                   Center(child: Text("data")),

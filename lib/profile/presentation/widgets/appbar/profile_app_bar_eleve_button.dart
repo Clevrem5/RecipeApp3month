@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:recipe2/profile/presentation/widgets/bottom/bottom_elevated_button.dart';
 
-class ProfileAppBarEleveButton extends StatelessWidget {
-  const ProfileAppBarEleveButton({
+class RecipeElevetedButton extends StatelessWidget {
+  const RecipeElevetedButton({
     super.key,
   });
 

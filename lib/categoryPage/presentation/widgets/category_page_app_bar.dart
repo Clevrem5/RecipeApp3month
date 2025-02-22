@@ -47,13 +47,13 @@ class CategoryPageAppBar extends StatelessWidget implements PreferredSizeWidget 
           child: Row(
             spacing: 5,
             children: [
-              AppBarContainer(
+              RecipeAppbarContainerButton(
                 image: "assets/svg/notification.svg",
                 width: 12,
                 height: 17,
                 callback: () {},
               ),
-              AppBarContainer(
+              RecipeAppbarContainerButton(
                 image: "assets/svg/search.svg",
                 width: 14,
                 height: 19,

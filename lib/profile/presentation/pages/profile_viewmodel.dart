@@ -4,11 +4,11 @@ import 'package:recipe2/profile/data/models/profile_models.dart';
 import 'package:recipe2/profile/data/repositories/profile_repositories.dart';
 
 class ProfileViewModel extends ChangeNotifier {
-  ProfileViewModel({required ProfileAppbarRepository repo}) : _profileRepo = repo {
+  ProfileViewModel({required RecipeProfileRepository repo}) : _profileRepo = repo {
     load();
   }
 
-  final ProfileAppbarRepository _profileRepo;
+  final RecipeProfileRepository _profileRepo;
 
   ProfileAppbarModel? myProfile;
   List<ProfileBodyModel>? recipes;

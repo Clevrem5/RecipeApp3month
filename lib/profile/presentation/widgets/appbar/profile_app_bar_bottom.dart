@@ -23,7 +23,7 @@ class ProfileAppBarBottom extends StatelessWidget
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ProfileAppBarEleveButton(),
+        RecipeElevetedButton(),
         AppbarInfo(vm: vm),
         BottomTabBar(),
       ],

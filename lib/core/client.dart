@@ -40,4 +40,15 @@ class ApiClient {
       throw Exception("Ma'lumot yo'q category");
     }
   }
+
+  Future<List<dynamic>>fetchOnboarding()async{
+    var response=await dio.get("/onboarding/list");
+    if (response.statusCode==200){
+      List<dynamic>data = List<dynamic>.from(response.data);
+      return data;
+    }else{
+      throw Exception("Onboarding kelmadi");
+    }
+  }
+
 }

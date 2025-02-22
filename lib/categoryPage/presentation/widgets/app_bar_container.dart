@@ -3,8 +3,8 @@ import 'package:recipe2/core/colors/colors.dart';
 
 import 'button_appbar.dart';
 
-class AppBarContainer extends StatelessWidget {
-  const AppBarContainer({
+class RecipeAppbarContainerButton extends StatelessWidget {
+  const RecipeAppbarContainerButton({
     super.key,
     required this.image,
     required this.width,

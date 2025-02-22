@@ -2,8 +2,8 @@ import 'package:recipe2/core/client.dart';
 import 'package:recipe2/profile/data/models/ProfileBodyModel.dart';
 import 'package:recipe2/profile/data/models/profile_models.dart';
 
-class ProfileAppbarRepository {
-  ProfileAppbarRepository({required this.client});
+class RecipeProfileRepository {
+  RecipeProfileRepository({required this.client});
 
   final ApiClient client;
 

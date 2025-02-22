@@ -59,13 +59,13 @@ class ProfilePageAppBar extends StatelessWidget implements PreferredSizeWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 5,
               children: [
-                AppBarContainer(
+                RecipeAppbarContainerButton(
                   image: "assets/svg/plus.svg",
                   width: 12,
                   height: 12,
                   callback: () {},
                 ),
-                AppBarContainer(
+                RecipeAppbarContainerButton(
                   image: "assets/svg/group.svg",
                   width: 12,
                   height: 12,

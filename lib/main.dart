@@ -6,14 +6,27 @@ import 'package:recipe2/categoryPage/presentation/pages/category_viewmodel.dart'
 import 'package:recipe2/core/Sizes.dart';
 import 'package:recipe2/core/client.dart';
 import 'package:recipe2/core/colors/colors.dart';
+import 'package:recipe2/features/pages/onboarding_page/data/repositories/Onboarding_repository.dart';
+import 'package:recipe2/features/pages/onboarding_page/presentation/pages/onboarding_view.dart';
+import 'package:recipe2/features/pages/onboarding_page/presentation/pages/onboarding_viewmodel.dart';
 import 'package:recipe2/profile/data/repositories/profile_repositories.dart';
+import 'package:recipe2/profile/presentation/pages/profile_view_page.dart';
 import 'package:recipe2/profile/presentation/pages/profile_viewmodel.dart';
-import 'package:recipe2/profile/presentation/widgets/homepage.dart';
 
 final GoRouter _router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
+      builder: (context, state) => OnboardingPage(
+        ovm: OnboardingViewModel(
+          repo: OnboardingRepository(
+            client: ApiClient(),
+          ),
+        ),
+      ),
+    ),
+    GoRoute(
+      path: '/category',
       builder: (context, state) => CategoryPage(
         vm: CategoryViewModel(
           repo: CategoryRepository(
@@ -26,7 +39,7 @@ final GoRouter _router = GoRouter(
       path: '/profile',
       builder: (context, state) => ProfilePage(
         vm: ProfileViewModel(
-          repo: ProfileAppbarRepository(
+          repo: RecipeProfileRepository(
             client: ApiClient(),
           ),
         ),
