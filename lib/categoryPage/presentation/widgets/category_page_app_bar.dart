@@ -23,7 +23,7 @@ class CategoryPageAppBar extends StatelessWidget implements PreferredSizeWidget 
           child: Center(
             child: IconButton(
               onPressed: () {
-                context.push("/profile");
+                context.go("/");
               },
               icon: SvgPicture.asset(
                 "assets/svg/vector.svg",

@@ -6,9 +6,7 @@ import 'package:recipe2/categoryPage/presentation/pages/category_viewmodel.dart'
 import 'package:recipe2/core/Sizes.dart';
 import 'package:recipe2/core/client.dart';
 import 'package:recipe2/core/colors/colors.dart';
-import 'package:recipe2/features/pages/onboarding_page/data/repositories/Onboarding_repository.dart';
-import 'package:recipe2/features/pages/onboarding_page/presentation/pages/onboarding_view.dart';
-import 'package:recipe2/features/pages/onboarding_page/presentation/pages/onboarding_viewmodel.dart';
+import 'package:recipe2/features/pages/auth_Page/login_page/presentation/pages/auth_login_view.dart';
 import 'package:recipe2/profile/data/repositories/profile_repositories.dart';
 import 'package:recipe2/profile/presentation/pages/profile_view_page.dart';
 import 'package:recipe2/profile/presentation/pages/profile_viewmodel.dart';
@@ -17,13 +15,14 @@ final GoRouter _router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => OnboardingPage(
-        ovm: OnboardingViewModel(
-          repo: OnboardingRepository(
-            client: ApiClient(),
-          ),
-        ),
-      ),
+      builder: (context, state) => LoginPage(),
+      // builder: (context, state) => OnboardingPage(
+      //   ovm: OnboardingViewModel(
+      //     repo: OnboardingRepository(
+      //       client: ApiClient(),
+      //     ),
+      //   ),
+      // ),
     ),
     GoRoute(
       path: '/category',
@@ -62,12 +61,21 @@ class RecipeApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: _router,
       theme: ThemeData(
+        colorScheme: ColorScheme(
+            brightness: Brightness.dark,
+            primary: RecipeColors.backRoundColor,
+            onPrimary: RecipeColors.textSmallColor,
+            secondary: Colors.yellow,
+            onSecondary: Colors.blue,
+            error: Colors.red,
+            onError: Colors.white,
+            surface: RecipeColors.backRoundColor,
+            onSurface: RecipeColors.buttonColor),
         fontFamily: "Poppins",
         appBarTheme: AppBarTheme(
           foregroundColor: RecipeColors.textSmallColor,
           backgroundColor: RecipeColors.backRoundColor,
           surfaceTintColor: Colors.transparent,
-          toolbarHeight: 102 * AppSizes.hRatio,
         ),
         brightness: Brightness.dark,
         scaffoldBackgroundColor: RecipeColors.backRoundColor,

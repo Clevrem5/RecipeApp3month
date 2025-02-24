@@ -54,7 +54,7 @@ class RecipeBottomNav extends StatelessWidget {
                   ButtonAppbar(
                     image: "assets/svg/categories.svg",
                     callback: () {
-                      context.go("/");
+                      context.go("/category");
                     },
                     width: 25,
                     height: 22,

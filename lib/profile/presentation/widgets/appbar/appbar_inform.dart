@@ -14,7 +14,7 @@ class AppbarInform extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      spacing: 2,
+      spacing: 1,
       children: [
         TextFor(
           text: number.toString(),

@@ -19,7 +19,7 @@ class ProfileAppbarModel {
     return ProfileAppbarModel(
       id: json["id"],
       userName: json["username"],
-      fullName: json["fullName"],
+      fullName: json["fullName"] ,
       bio: json["presentation"],
       image: json["profilePhoto"],
       recipeCount: json["recipesCount"] ,

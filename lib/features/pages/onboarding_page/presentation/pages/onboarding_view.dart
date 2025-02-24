@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:recipe2/core/Sizes.dart';
 import 'package:recipe2/core/colors/colors.dart';
 import 'package:recipe2/features/pages/onboarding_page/presentation/pages/onboarding_appbar.dart';
@@ -94,6 +95,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 widget.ovm.controller!.jumpToPage(
                                     index == 0 ? index + 1 : index - 1);
                                 setState(() {});
+                                index==1?context.go("/category"):null;
                               },
                               style: ElevatedButton.styleFrom(
                                 minimumSize: Size(207, 45),

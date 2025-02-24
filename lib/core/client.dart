@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 
 class ApiClient {
   final Dio dio = Dio(
-    BaseOptions(baseUrl: "http://10.10.3.130:8888/api/v1"),
+    BaseOptions(baseUrl: "http://192.168.10.201:8888/api/v1"),
   );
 
   Future<Map<String, dynamic>> fetchMyProfile() async {
