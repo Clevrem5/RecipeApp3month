@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:recipe2/features/pages/auth_Page/login_page/presentation/pages/n_recipe_text_field.dart';
-import 'package:recipe2/features/pages/auth_Page/login_page/presentation/pages/recipe_log_elevated_button.dart';
-import 'package:recipe2/features/pages/auth_Page/login_page/presentation/pages/recipe_text_field_s.dart';
+import 'package:recipe2/features/pages/auth_Page/login_page/presentation/widgets/login_widgets/n_recipe_text_field.dart';
+import 'package:recipe2/features/pages/auth_Page/login_page/presentation/widgets/login_widgets/recipe_log_elevated_button.dart';
+import 'package:recipe2/features/pages/auth_Page/login_page/presentation/widgets/login_widgets/recipe_text_field_s.dart';
 
 class LoginPageListView extends StatelessWidget {
    LoginPageListView({

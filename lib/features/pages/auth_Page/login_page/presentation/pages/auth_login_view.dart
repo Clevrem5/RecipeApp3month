@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe2/core/Sizes.dart';
 import 'package:recipe2/core/colors/colors.dart';
-import 'package:recipe2/features/pages/auth_Page/login_page/presentation/pages/login_page_list_view.dart';
+import 'package:recipe2/features/pages/auth_Page/login_page/presentation/widgets/login_widgets/login_page_list_view.dart';
 import 'package:recipe2/profile/presentation/widgets/appbar/text_for.dart';
 
 class LoginPage extends StatelessWidget {
