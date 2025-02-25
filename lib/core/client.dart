@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 
 class ApiClient {
   final Dio dio = Dio(
-    BaseOptions(baseUrl: "http://192.168.10.201:8888/api/v1"),
+    BaseOptions(baseUrl: "http://192.168.10.249:8888/api/v1"),
   );
 
   Future<Map<String, dynamic>> fetchMyProfile() async {
@@ -51,4 +51,16 @@ class ApiClient {
     }
   }
 
+  Future<String> login(String login, String password) async {
+    var response = await dio.post(
+      "/auth/login",
+      data: {"login": login, 'password': password},
+    );
+    if (response.statusCode==200){
+      var data = Map<String,String>.from(response.data);
+      return data['accessToken']!;
+    }else{
+      throw Exception("Login xato");
+    }
+  }
 }

@@ -10,7 +10,7 @@ class BottomTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 30,
+      height: 31,
       width: 430,
       child: TabBar(
         indicatorSize: TabBarIndicatorSize.tab,

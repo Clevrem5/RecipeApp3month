@@ -16,7 +16,7 @@ class AppbarInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 356 * AppSizes.wratio,
-      height: 49.57 * AppSizes.hRatio,
+      height: 50 * AppSizes.hRatio,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
         border: Border.all(

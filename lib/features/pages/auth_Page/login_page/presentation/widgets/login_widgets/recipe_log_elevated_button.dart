@@ -26,7 +26,7 @@ class RecipeLogElevatedButton extends StatelessWidget {
       ),
       child: TextFor(
         text: text,
-        size: 23,
+        size: 20,
         color: RecipeColors.buttonColor,
       ),
     );

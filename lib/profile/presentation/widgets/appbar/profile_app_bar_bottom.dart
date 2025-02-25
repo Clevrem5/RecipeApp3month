@@ -15,7 +15,7 @@ class ProfileAppBarBottom extends StatelessWidget
   final ProfileViewModel vm;
 
   @override
-  Size get preferredSize => const Size(double.infinity, 130);
+  Size get preferredSize => const Size(double.infinity, 132);
 
   @override
   Widget build(BuildContext context) {

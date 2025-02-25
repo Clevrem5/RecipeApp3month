@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:recipe2/core/Sizes.dart';
 import 'package:recipe2/features/pages/auth_Page/login_page/presentation/widgets/login_widgets/n_recipe_text_field.dart';
 import 'package:recipe2/features/pages/auth_Page/login_page/presentation/widgets/login_widgets/recipe_log_elevated_button.dart';
 import 'package:recipe2/features/pages/auth_Page/login_page/presentation/widgets/login_widgets/recipe_text_field_s.dart';
@@ -16,6 +18,7 @@ class LoginPageListView extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.symmetric(horizontal: 36),
       children: [
+        SizedBox(height:135*AppSizes.hRatio ),
         Form(
           child: Column(
             spacing: 10,
@@ -37,19 +40,21 @@ class LoginPageListView extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 30,
+          height: 90*AppSizes.hRatio,
         ),
         Center(
           child: Column(
             spacing: 20,
             children: [
               RecipeLogElevatedButton(
-                text: "Log In",
+                text: "Login",
                 callback: () {},
               ),
               RecipeLogElevatedButton(
                 text: "Sign Up",
-                callback: () {},
+                callback: () {
+                  context.go('/category');
+                },
               ),
             ],
           ),

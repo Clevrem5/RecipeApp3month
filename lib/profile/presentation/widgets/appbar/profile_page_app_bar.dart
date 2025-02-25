@@ -12,7 +12,7 @@ class ProfilePageAppBar extends StatelessWidget implements PreferredSizeWidget {
     required this.vm,
   });
   @override
-  Size get preferredSize => Size(double.infinity, 250 * AppSizes.hRatio);
+  Size get preferredSize => Size(double.infinity, 251 * AppSizes.hRatio);
 
   final ProfileViewModel vm;
 
@@ -20,16 +20,16 @@ class ProfilePageAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     AppSizes.init(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 3),
-      child: AppBar(
-        leadingWidth: 102 * AppSizes.wratio,
+      padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
+      child: AppBar(clipBehavior: Clip.none,
+        leadingWidth: 103 * AppSizes.wratio,
         leading: ClipRRect(
           borderRadius: BorderRadius.circular(51),
           child: Image.network(vm.myProfile!.image),
         ),
         title: SizedBox(
           width: 160 * AppSizes.wratio,
-          height: 120 * AppSizes.hRatio,
+          height: 125 * AppSizes.hRatio,
           child: Column(
             spacing: 3,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -57,7 +57,7 @@ class ProfilePageAppBar extends StatelessWidget implements PreferredSizeWidget {
             alignment: Alignment.topCenter,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: 5,
+              spacing: 4,
               children: [
                 RecipeAppbarContainerButton(
                   image: "assets/svg/plus.svg",
