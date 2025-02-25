@@ -20,7 +20,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   @override
   Widget build(BuildContext context) {
     return ListenableBuilder(
-      listenable: widget.vm,
+      listenable: widget.vm,//bu joyda ovmni o'zgartrdim
       builder: (context, child) => Scaffold(
         backgroundColor: RecipeColors.backRoundColor,
         body: PageView.builder(
