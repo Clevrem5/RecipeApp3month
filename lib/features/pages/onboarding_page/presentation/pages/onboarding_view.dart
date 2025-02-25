@@ -8,9 +8,9 @@ import 'package:recipe2/profile/presentation/widgets/appbar/text_for.dart';
 import 'onboarding_viewmodel.dart';
 
 class OnboardingPage extends StatefulWidget {
-  const OnboardingPage({super.key, required this.ovm});
+  const OnboardingPage({super.key, required this.vm});
 
-  final OnboardingViewModel ovm;
+  final OnboardingViewModel vm;
 
   @override
   State<OnboardingPage> createState() => _OnboardingPageState();
@@ -20,14 +20,14 @@ class _OnboardingPageState extends State<OnboardingPage> {
   @override
   Widget build(BuildContext context) {
     return ListenableBuilder(
-      listenable: widget.ovm,
+      listenable: widget.vm,
       builder: (context, child) => Scaffold(
         backgroundColor: RecipeColors.backRoundColor,
         body: PageView.builder(
-          controller: widget.ovm.controller,
-          itemCount: widget.ovm.onboard.length,
+          controller: widget.vm.controller,
+          itemCount: widget.vm.onboard.length,
           onPageChanged: (index) {
-            widget.ovm.updateIndex(index);
+            widget.vm.updateIndex(index);
           },
           itemBuilder: (context, index) => Scaffold(
             appBar:index==1 ?OnboardingAppbar():AppBar(toolbarHeight: 70,),
@@ -48,12 +48,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     spacing: index==0?5:8,
                     children: [
                       TextFor(
-                        text: widget.ovm.onboard[index].title,
+                        text: widget.vm.onboard[index].title,
                         size: 20,
                         weight: FontWeight.w600,
                       ),
                       TextFor(
-                        text: widget.ovm.onboard[index].subtitle,
+                        text: widget.vm.onboard[index].subtitle,
                         size: 13,
                         weight: FontWeight.w400,
                       ),
@@ -68,7 +68,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       child: Stack(
                         children: [
                           Image.network(
-                            widget.ovm.onboard[index].image,
+                            widget.vm.onboard[index].image,
                             width: double.infinity,
                             height: 720 * AppSizes.hRatio,
                             fit: BoxFit.cover,
@@ -92,7 +92,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             left: 80,
                             child: ElevatedButton(
                               onPressed: () {
-                                widget.ovm.controller!.jumpToPage(
+                                widget.vm.controller!.jumpToPage(
                                     index == 0 ? index + 1 : index - 1);
                                 setState(() {});
                                 index==1?context.go("/login"):null;

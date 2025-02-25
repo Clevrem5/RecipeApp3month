@@ -24,7 +24,7 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/',
       builder: (context, state) => OnboardingPage(
-        ovm: OnboardingViewModel(
+        vm: OnboardingViewModel(
           repo: OnboardingRepository(
             client: ApiClient(),
           ),
