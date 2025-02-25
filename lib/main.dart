@@ -15,18 +15,25 @@ import 'package:recipe2/profile/data/repositories/profile_repositories.dart';
 import 'package:recipe2/profile/presentation/pages/profile_view_page.dart';
 import 'package:recipe2/profile/presentation/pages/profile_viewmodel.dart';
 
+import 'features/pages/onboarding_page/data/repositories/Onboarding_repository.dart';
+import 'features/pages/onboarding_page/presentation/pages/onboarding_view.dart';
+import 'features/pages/onboarding_page/presentation/pages/onboarding_viewmodel.dart';
+
 final GoRouter _router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
+      builder: (context, state) => OnboardingPage(
+        ovm: OnboardingViewModel(
+          repo: OnboardingRepository(
+            client: ApiClient(),
+          ),
+        ),
+      ),
+    ),
+    GoRoute(
+      path: '/login',
       builder: (context, state) => LoginPage(),
-      // builder: (context, state) => OnboardingPage(
-      //   ovm: OnboardingViewModel(
-      //     repo: OnboardingRepository(
-      //       client: ApiClient(),
-      //     ),
-      //   ),
-      // ),
     ),
     GoRoute(
       path: '/category',

@@ -95,7 +95,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 widget.ovm.controller!.jumpToPage(
                                     index == 0 ? index + 1 : index - 1);
                                 setState(() {});
-                                index==1?context.go("/category"):null;
+                                index==1?context.go("/login"):null;
                               },
                               style: ElevatedButton.styleFrom(
                                 minimumSize: Size(207, 45),
