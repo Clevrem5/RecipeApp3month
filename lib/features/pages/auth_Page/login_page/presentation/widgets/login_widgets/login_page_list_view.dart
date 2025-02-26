@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:recipe2/core/Sizes.dart';
-import 'package:recipe2/features/pages/auth_Page/login_page/presentation/widgets/login_widgets/n_recipe_text_field.dart';
-import 'package:recipe2/features/pages/auth_Page/login_page/presentation/widgets/login_widgets/recipe_log_elevated_button.dart';
-import 'package:recipe2/features/pages/auth_Page/login_page/presentation/widgets/login_widgets/recipe_text_field_s.dart';
+import 'package:recipe2/core/appSizes/Sizes.dart';
+import 'package:recipe2/features/common_widgets/for_body/number_log_recipe_text_field.dart';
+import 'package:recipe2/features/common_widgets/for_body/recipe_log_elevated_button.dart';
+import 'package:recipe2/features/common_widgets/for_body/recipe_log_text_field.dart';
 
 class LoginPageListView extends StatelessWidget {
    LoginPageListView({
@@ -23,13 +23,13 @@ class LoginPageListView extends StatelessWidget {
           child: Column(
             spacing: 10,
             children: [
-              RecipeTextFieldS(
+              RecipeAuthTextField(
                 label: "Email",
                 hint: "example@example.com",
                 validator: (value) => null,
                 controller: controller,
               ),
-              NRecipeTextField(
+              RecipeNumberTextField(
                 label: "Password",
                 hint: "● ● ● ● ● ● ● ●",
                 validator: (value) => null,

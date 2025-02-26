@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:recipe2/core/Sizes.dart';
+import 'package:recipe2/core/appSizes/Sizes.dart';
 import 'package:recipe2/core/colors/colors.dart';
+import 'package:recipe2/core/router/routes_name.dart';
 import 'package:recipe2/features/pages/onboarding_page/presentation/pages/onboarding_appbar.dart';
-import 'package:recipe2/profile/presentation/widgets/appbar/text_for.dart';
-
+import '../../../profile/presentation/widgets/appbar/text_for.dart';
 import 'onboarding_viewmodel.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -95,7 +95,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 widget.vm.controller!.jumpToPage(
                                     index == 0 ? index + 1 : index - 1);
                                 setState(() {});
-                                index==1?context.go("/login"):null;
+                                index==1?context.go(Routes.login):null;
                               },
                               style: ElevatedButton.styleFrom(
                                 minimumSize: Size(207, 45),

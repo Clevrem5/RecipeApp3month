@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+import 'package:recipe2/core/colors/colors.dart';
+
+import 'svg_button-appbar_category.dart';
+
+class RecipeAppbarContainerButton extends StatelessWidget {
+  const RecipeAppbarContainerButton({
+    super.key,
+    required this.image,
+    required this.width,
+    required this.height,
+    required this.callback,
+  });
+
+  final String image;
+  final double width, height;
+  final VoidCallback callback;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 28,
+      height: 28,
+      decoration: BoxDecoration(
+        color: RecipeColors.iconColor,
+        borderRadius: BorderRadius.circular(14),
+      ),
+      child: SvgButtonWidget(
+        image: image,
+        callback: callback,
+        width: width,
+        height: height,
+      ),
+    );
+  }
+}

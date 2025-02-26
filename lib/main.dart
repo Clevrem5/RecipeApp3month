@@ -1,62 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:recipe2/categoryPage/data/repository/category_repo.dart';
-import 'package:recipe2/categoryPage/presentation/pages/category_view.dart';
-import 'package:recipe2/categoryPage/presentation/pages/category_viewmodel.dart';
-import 'package:recipe2/core/Sizes.dart';
+import 'package:recipe2/core/appSizes/Sizes.dart';
 import 'package:recipe2/core/client.dart';
 import 'package:recipe2/core/colors/colors.dart';
+import 'package:recipe2/core/router/go_router_Pages.dart';
 import 'package:recipe2/features/pages/auth_Page/login_page/data/repositories/auth_repository.dart';
-import 'package:recipe2/features/pages/auth_Page/login_page/presentation/pages/auth_login_view.dart';
-import 'package:recipe2/features/pages/auth_Page/login_page/presentation/pages/auth_view_model.dart';
-import 'package:recipe2/profile/data/repositories/profile_repositories.dart';
-import 'package:recipe2/profile/presentation/pages/profile_view_page.dart';
-import 'package:recipe2/profile/presentation/pages/profile_viewmodel.dart';
+import 'package:recipe2/features/pages/categoryPage/data/repository/category_repo.dart';
+import 'package:recipe2/features/pages/onboarding_page/data/repositories/Onboarding_repository.dart';
+import 'package:recipe2/features/pages/profile/data/repositories/profile_repositories.dart';
 
-import 'features/pages/onboarding_page/data/repositories/Onboarding_repository.dart';
-import 'features/pages/onboarding_page/presentation/pages/onboarding_view.dart';
-import 'features/pages/onboarding_page/presentation/pages/onboarding_viewmodel.dart';
-
-final GoRouter _router = GoRouter(
-  routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) => OnboardingPage(
-        vm: OnboardingViewModel(
-          repo: OnboardingRepository(
-            client: ApiClient(),
-          ),
-        ),
-      ),
-    ),
-    GoRoute(
-      path: '/login',
-      builder: (context, state) => LoginPage(),
-    ),
-    GoRoute(
-      path: '/category',
-      builder: (context, state) => CategoryPage(
-        vm: CategoryViewModel(
-          repo: CategoryRepository(
-            client: ApiClient(),
-          ),
-        ),
-      ),
-    ),
-    GoRoute(
-      path: '/profile',
-      builder: (context, state) => ProfilePage(
-        vm: ProfileViewModel(
-          repo: RecipeProfileRepository(
-            client: ApiClient(),
-          ),
-        ),
-      ),
-    ),
-  ],
-);
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -69,14 +22,34 @@ class RecipeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppSizes.init(context);
-    return ChangeNotifierProvider(
-      create: (context) => AuthViewModel(
-        repo: AuthRepository(
-          client: ApiClient(),
+    return MultiProvider(
+      providers: [
+        Provider(
+          create: (context) => ApiClient(),
         ),
-      ),
+        Provider(
+          create: (context) => AuthRepository(
+            client: context.read(),
+          ),
+        ),
+        Provider(
+          create: (context) => CategoryRepository(
+            client: context.read(),
+          ),
+        ),
+        Provider(
+          create: (context) => OnboardingRepository(
+            client: context.read(),
+          ),
+        ),
+        Provider(
+          create: (context) => RecipeProfileRepository(
+            client: context.read(),
+          ),
+        ),
+      ],
       builder: (context, child) => MaterialApp.router(
-        routerConfig: _router,
+        routerConfig: router,
         theme: ThemeData(
           colorScheme: ColorScheme(
               brightness: Brightness.dark,
