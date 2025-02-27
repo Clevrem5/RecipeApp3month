@@ -14,7 +14,7 @@ import '../../features/RecipePages/profile/presentation/pages/profile_viewmodel.
 import 'routes_name.dart';
 
 final GoRouter router = GoRouter(
-  initialLocation: Routes.signUp,
+  initialLocation: Routes.onboarding,
   routes: [
     GoRoute(
       path: Routes.onboarding,

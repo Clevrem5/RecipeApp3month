@@ -5,6 +5,8 @@ import 'package:recipe2/features/common_widgets/for_body/number_log_recipe_text_
 import 'package:recipe2/features/common_widgets/for_body/recipe_log_elevated_button.dart';
 import 'package:recipe2/features/common_widgets/for_body/recipe_log_text_field.dart';
 
+import '../../../../../../../core/router/routes_name.dart';
+
 class LoginPageListView extends StatelessWidget {
    LoginPageListView({
     super.key,
@@ -48,12 +50,14 @@ class LoginPageListView extends StatelessWidget {
             children: [
               RecipeLogElevatedButton(
                 text: "Login",
-                callback: () {},
+                callback: () {
+                  context.go(Routes.profile);
+                },
               ),
               RecipeLogElevatedButton(
                 text: "Sign Up",
                 callback: () {
-                  context.go('/category');
+                  context.go(Routes.signUp);
                 },
               ),
             ],

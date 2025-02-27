@@ -65,7 +65,7 @@ class LoginPage extends StatelessWidget {
                 RecipeLogElevatedButton(
                   text: "Sign Up",
                   callback: () {
-                    context.go(Routes.category);
+                    context.go(Routes.signUp);
                   },
                 ),
               ],
