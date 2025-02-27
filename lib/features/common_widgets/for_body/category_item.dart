@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe2/core/appSizes/Sizes.dart';
+import 'package:recipe2/features/RecipePages/categoryPage/data/models/category_model.dart';
 
-import '../../pages/categoryPage/data/models/category_model.dart';
 
 class CategoryItem extends StatelessWidget {
   const CategoryItem({

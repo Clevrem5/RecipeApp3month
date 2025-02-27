@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:recipe2/core/colors/colors.dart';
 
-import '../../pages/profile/presentation/widgets/appbar/text_for.dart';
+import '../../RecipePages/profile/presentation/widgets/appbar/text_for.dart';
+
 
 class RecipeNumberTextField extends StatelessWidget {
   const RecipeNumberTextField({

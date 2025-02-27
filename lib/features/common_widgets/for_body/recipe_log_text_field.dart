@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe2/core/colors/colors.dart';
+import 'package:recipe2/features/RecipePages/profile/presentation/widgets/appbar/text_for.dart';
 
-import '../../pages/profile/presentation/widgets/appbar/text_for.dart';
 
 class RecipeAuthTextField extends StatelessWidget {
   const RecipeAuthTextField({

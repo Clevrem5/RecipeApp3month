@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:recipe2/core/appSizes/Sizes.dart';
 import 'package:recipe2/core/client.dart';
 import 'package:recipe2/core/colors/colors.dart';
 import 'package:recipe2/core/router/go_router_Pages.dart';
-import 'package:recipe2/features/pages/auth_Page/login_page/data/repositories/auth_repository.dart';
-import 'package:recipe2/features/pages/categoryPage/data/repository/category_repo.dart';
-import 'package:recipe2/features/pages/onboarding_page/data/repositories/Onboarding_repository.dart';
-import 'package:recipe2/features/pages/profile/data/repositories/profile_repositories.dart';
+import 'package:recipe2/features/RecipePages/categoryPage/data/repository/category_repo.dart';
+import 'package:recipe2/features/RecipePages/onboarding_page/data/repositories/Onboarding_repository.dart';
+import 'package:recipe2/features/RecipePages/profile/data/repositories/profile_repositories.dart';
+
+import 'features/RecipePages/auth_Page/login_sign_pages/data/repositories/auth_repository.dart';
 
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   runApp(RecipeApp());
 }
 
@@ -53,13 +56,13 @@ class RecipeApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme(
               brightness: Brightness.dark,
-              primary: Colors.yellow,
-              onPrimary: Colors.black,
+              primary: RecipeColors.backRoundColor,
+              onPrimary: Colors.white,
               secondary: Colors.blue,
               onSecondary: Colors.blue,
               error: Colors.red,
               onError: Colors.white,
-              surface: Colors.black,
+              surface: RecipeColors.backRoundColor,
               onSurface: Colors.white),
           fontFamily: "Poppins",
           appBarTheme: AppBarTheme(

@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 
+import '../features/RecipePages/auth_Page/login_sign_pages/data/models/signupModel.dart';
+
 class ApiClient {
   final Dio dio = Dio(
     BaseOptions(baseUrl: "http://192.168.10.249:8888/api/v1",validateStatus: (status) => true,),
@@ -63,4 +65,15 @@ class ApiClient {
       throw Exception("Login xato");
     }
   }
+  Future<bool> signUp(UserModel model) async {
+
+    var response = await dio.post(
+      '/auth/register',
+      data: model.toJson(),
+
+    );
+    print("malumot bor ${response.data}");
+    return response.statusCode == 201 ? true :false;
+  }
+
 }
