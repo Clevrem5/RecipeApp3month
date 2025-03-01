@@ -7,11 +7,12 @@ import 'package:recipe2/core/client.dart';
 import 'package:recipe2/core/colors/colors.dart';
 import 'package:recipe2/core/router/go_router_Pages.dart';
 import 'package:recipe2/features/RecipePages/categoryPage/data/repository/category_repo.dart';
+import 'package:recipe2/features/RecipePages/category_Details/data/repositories/category_detail_repository.dart';
 import 'package:recipe2/features/RecipePages/onboarding_page/data/repositories/Onboarding_repository.dart';
 import 'package:recipe2/features/RecipePages/profile/data/repositories/profile_repositories.dart';
+import 'package:recipe2/features/RecipePages/recipe_details/data/repositories/recipe_details_repository.dart';
 
 import 'features/RecipePages/auth_Page/login_sign_pages/data/repositories/auth_repository.dart';
-
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,6 +48,16 @@ class RecipeApp extends StatelessWidget {
         ),
         Provider(
           create: (context) => RecipeProfileRepository(
+            client: context.read(),
+          ),
+        ),
+        Provider(
+          create: (context) => RecipeDetailsRepository(
+            client: context.read(),
+          ),
+        ),
+        Provider(
+          create: (context) => RecipeRepository(
             client: context.read(),
           ),
         ),

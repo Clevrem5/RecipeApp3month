@@ -16,7 +16,7 @@ class ApiClient {
     } else {
       throw Exception("Ma'lumot yo'q");
     }
-  }
+  } //profileAppbar
 
   Future<List<Map<String, dynamic>>?> fetchProfileRecipes() async {
     var response2 = await dio.get("/recipes/list");
@@ -28,8 +28,7 @@ class ApiClient {
     } else {
       throw Exception("Malumot yo'q");
     }
-  }
-
+  } //profileBody
 
   Future<List<dynamic>> fetchCategory() async {
     var response = await dio.get("/categories/list");
@@ -41,7 +40,7 @@ class ApiClient {
     } else {
       throw Exception("Ma'lumot yo'q category");
     }
-  }
+  } //Category
 
   Future<List<dynamic>>fetchOnboarding()async{
     var response=await dio.get("/onboarding/list");
@@ -51,7 +50,7 @@ class ApiClient {
     }else{
       throw Exception("Onboarding kelmadi");
     }
-  }
+  } //onboarding
 
   Future<String> login(String login, String password) async {
     var response = await dio.post(
@@ -64,7 +63,8 @@ class ApiClient {
     }else{
       throw Exception("Login xato");
     }
-  }
+  } //login
+
   Future<bool> signUp(UserModel model) async {
 
     var response = await dio.post(
@@ -74,6 +74,16 @@ class ApiClient {
     );
     print("malumot bor ${response.data}");
     return response.statusCode == 201 ? true :false;
+  } //signUp
+
+  Future<dynamic> fetchRecipeDetails(int recipeId) async {
+    var response = await dio.get('/recipe/detail/$recipeId');
+    return response.data;
   }
 
+  Future <List<dynamic>>fetchCategoryById(int categoryId)async{
+    var response= await dio.get('/recipe/list?Category=$categoryId');
+   return response.statusCode==200 ? response.data:Exception("Xato bor javob kelmadi Apidan");
+  }
 }
+
